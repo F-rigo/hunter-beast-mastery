@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beast Mastery Hunter Guide: WoW Forever</title>
+<style>
+:root{--bg:#120e0b;--panel:#1d1714;--line:#3d2d25;--text:#eadcc6;--muted:#ab9a84;--gold:#c9a24a;--horde:#a6302a;--ok:#7fb873;--div:#e0a040;--nc:#8c9bab;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,serif;font-size:17px;line-height:1.55}
+h1,h2,h3{font-family:Georgia,serif;margin:0}
+h1{font-size:clamp(1.5rem,4vw,2.1rem);color:var(--gold)}
+h2{font-size:1.3rem;color:var(--gold);margin:30px 0 10px;scroll-margin-top:52px}
+h3{font-size:1.05rem;margin:16px 0 6px}
+a{color:var(--gold)}
+header{padding:22px 16px 14px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#24150f,var(--bg))}
+.sub{color:var(--muted);font-style:italic;margin:6px 0 0}
+nav.menu{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav.menu .in{max-width:920px;margin:0 auto;padding:0 16px;display:flex;gap:4px}
+nav.menu a{display:inline-block;padding:11px 10px;color:var(--muted);text-decoration:none;font-size:.88rem;border-bottom:3px solid transparent}
+nav.menu a:hover,nav.menu a.on{color:var(--gold);border-bottom-color:var(--horde)}
+main{max-width:920px;margin:0 auto;padding:8px 16px 40px}
+.note{background:#2a1b14;border-left:3px solid var(--div);padding:10px 14px;border-radius:4px;margin:12px 0;font-size:.95rem}
+.note.info{border-left-color:var(--nc);background:#181d22}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-size:.85rem}
+.wrap{overflow-x:auto}
+.tag{display:inline-block;font-size:.72rem;padding:2px 7px;border-radius:4px;border:1px solid;margin-left:4px;white-space:nowrap;vertical-align:2px}
+.tag.ok{color:var(--ok);border-color:var(--ok)}
+.tag.div{color:var(--div);border-color:var(--div)}
+.tag.nc{color:var(--nc);border-color:var(--nc)}
+.meta{color:var(--muted);font-size:.92rem}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920px;margin:0 auto;border-top:1px solid var(--line)}
+@media (max-width:520px){body{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Beast Mastery Hunter Guide</h1>
+  <p class="sub">Beast Mastery Hunter for World of Warcraft: Forever, from level 1 to 60, with the DPS rotation and pet notes. Sources read on November 17, 2026, almost all from Wowhead Forever.</p>
+</header>
+<nav class="menu" id="menu" aria-label="Seções do guia"><div class="in" id="menuIn"></div></nav>
+<main>
+
+<div class="note">Wowhead Forever is the main source for this guide. Its talent pages show builds as calculator images, so the talent point order below comes from the earlier Hunter research (Mobalytics and Leprestore) and is marked by source. Items marked <span class="tag div">Sources differ</span> list each source's version. Items marked <span class="tag nc">Not confirmed</span> were not found in a source I could read.</div>
+
+<h2>1. Overview and changes in Forever</h2>
+<div class="card">
+  <ul>
+    <li>Beast Mastery Hunters get Summon Hawk, a talent that works like a second, temporary pet. Only 2 hawks can be active at once, and it shares a cooldown with Arcane Shot. <span class="tag ok">Confirmed</span> by Wowhead (overview, November 14, 2026).</li>
+    <li>Aimed Shot is now baseline (not a talent). It shares a cooldown with Multi-Shot and deals an extra 350 ranged damage. <span class="tag ok">Confirmed</span> by Wowhead.</li>
+    <li>Focused Fire (talent): +2% damage for you and your pet while the pet is active. Endurance Training: +15% pet health and armor. Intimidation: pet stun for 3 seconds on its next hit, with 100% extra crit on that hit. <span class="tag ok">Confirmed</span> by Wowhead.</li>
+    <li>Auto Shot has a 0.5 second cast time again, and it can continue during other casts. <span class="tag ok">Confirmed</span> by Wowhead.</li>
+    <li>Wowhead rates Beast Mastery as having high burst and strong kiting, but no group utility. Its viability for raids is questionable, and the sources say it relies on high base damage.</li>
+  </ul>
+</div>
+
+<h2>2. Pets: how they scale</h2>
+<div class="card">
+  <p>Pets now take part of your stats. Wowhead lists these rules (<span class="tag ok">Confirmed</span>):</p>
+  <ul>
+    <li>Stamina: each point of your Stamina gives the pet 2 health.</li>
+    <li>Armor: the pet gains 30% of your armor.</li>
+    <li>Attack Power: the pet gains 10% of your highest Attack Power source.</li>
+    <li>Critical strike: the pet gains 100% of your crit chance.</li>
+    <li>Pets can no longer be buffed by other classes, and they have avoidance now.</li>
+  </ul>
+  <p class="meta">This is why Lethal Attacks, Careful Aim and Trueshot Aura also raise pet damage. Wowhead says Improved Tracking is slightly stronger than Mortal Shots because it is a blanket damage increase.</p>
+</div>
+<h3>Leveling pets (Wowhead)</h3>
+<div class="card">
+  <ul>
+    <li><strong>Cat and Raptor:</strong> highest damage, with a 1.1x damage modifier. Both have Claw, Bite and Dash. Cat has high attack speed variants; Raptor does not.</li>
+    <li><strong>Carrion Bird:</strong> 1.0x damage modifier, with Claw, Bite and Dive. Its Demoralizing Screech greatly weakens the enemy it fights.</li>
+    <li>About every 10 levels, catch a pet with higher ranks of Claw and Bite at a Stable Master, then teach the new ranks with Beast Training.</li>
+  </ul>
+  <p class="meta"><span class="tag div">Sources differ</span> on pet rankings. The earlier pet research (Axeetech, Exitlag) put Carrion Bird and Wolf as S tier and Cat as S tier, and Bear as the best for Beast Mastery leveling in Exitlag. Wowhead does not publish a tier list.</p>
+</div>
+
+<h2>3. Talent order for leveling (Beast Mastery)</h2>
+<div class="note info">Wowhead's leveling guide says to fill the Beast Mastery tree from top to bottom, then do the same in Marksmanship. Pathfinding, Improved Revive Pet and Endurance Training are valid for the first 3 points. Rapid Killing's 2 points can go elsewhere. Do not take Lone Wolf while leveling.</div>
+<div class="wrap"><table>
+  <tr><th>Level</th><th>Talent</th><th>Source note</th></tr>
+  <tr><td>10 to 14</td><td>Deadly Aspects 5/5</td><td>Mobalytics (earlier research), top of the tree</td></tr>
+  <tr><td>15 to 16</td><td>Focused Fire 2/2</td><td>Mobalytics</td></tr>
+  <tr><td>17 to 18</td><td>Pathfinding 2/2</td><td>Mobalytics. Leprestore says it moved to BM row 3 on November 3</td></tr>
+  <tr><td>19</td><td>Improved Revive Pet 1/2</td><td>Method suggests Ferocity for the second point</td></tr>
+  <tr><td>20 to 24</td><td>Unleashed Fury 5/5, Ferocity 5/5, Bestial Swiftness 1/1, Bestial Discipline 2/2</td><td><span class="tag nc">Not confirmed</span> exact order</td></tr>
+  <tr><td>25</td><td>Summon Hawk 1/1</td><td>Leprestore. Unlocks the temporary hawk with 16 BM points</td></tr>
+  <tr><td>30</td><td>Intimidation 1/1</td><td>Leprestore. Pet stun with 21 BM points</td></tr>
+  <tr><td>31 to 39</td><td>Frenzy 5/5, Spirit Bond, Improved Revive Pet or Endurance Training</td><td><span class="tag div">Sources differ</span> on Endurance Training (0 to 5)</td></tr>
+  <tr><td>40</td><td>Bestial Wrath 1/1</td><td>Confirmed. Completes the BM tree with 31 points</td></tr>
+  <tr><td>40 to 60</td><td>Marksmanship 20 points: Hawk Eye 3/3, Careful Aim 5/5, Mortal Shots 5/5, Lethal Attacks 5/5, Rapid Killing 2/2, Trueshot Aura 1/1</td><td><span class="tag nc">Not confirmed</span> exact order (Mobalytics shows the MM variant)</td></tr>
+</table></div>
+
+<h2>4. Talent builds for endgame (Wowhead)</h2>
+<div class="card">
+  <p><strong>PvE dungeons and raids:</strong> Lethal Attacks, Careful Aim and Trueshot Aura, which all raise pet damage through stat transfer. Improved Tracking over Mortal Shots, since it is a blanket damage increase. Untaken Beast Mastery talents do not add damage.</p>
+  <p><strong>PvP:</strong> Improved Concussive Shot (for a lucky stun), Improved Aspect of the Monkey against melee, and Summon Hawk, which has no minimum range, so you can cast it while fighting melee.</p>
+  <p class="meta">Wowhead's talent builds page was last updated November 16, 2026. Exact points per talent are in its calculator, which I could not read.</p>
+</div>
+
+<h2>5. Racials for Beast Mastery (Wowhead)</h2>
+<div class="wrap"><table>
+  <tr><th>Race</th><th>Racial</th><th>What Wowhead says</th><th>Status</th></tr>
+  <tr><td>Night Elf</td><td>Elune's Light</td><td>+10% crit for 15 seconds, 3 min cooldown. Your pet also gets 10% extra crit during the window. Strongest with Rapid Fire and Bestial Wrath.</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Human</td><td>Ruthless</td><td>Crit chance for all attacks and spells, and the pet copies it. Wowhead's overview says 1%; a reader comment says 2%.</td><td><span class="tag div">Sources differ</span></td></tr>
+  <tr><td>Orc</td><td>Blood Fury, Savage</td><td>Blood Fury: instant cast, +10% Attack Power, 2 min cooldown. Savage: 1% crit (pet copies it). Wowhead notes Blood Fury now also works for ranged.</td><td><span class="tag ok">Confirmed</span></td></tr>
+  <tr><td>Tauren</td><td>Endurance, Plainsrunning, War Stomp</td><td>No offensive benefit. Endurance adds health (useful in raids and PvP). Plainsrunning competes with Aspect of the Cheetah and is roughly a level 40 mount's speed once fully stacked. War Stomp is a strong AoE stun.</td><td><span class="tag ok">Confirmed</span> (Wowhead). Plainsrunning's max stack is <span class="tag div">Sources differ</span> (Warrior guide says 60%)</td></tr>
+  <tr><td>Troll</td><td>Beast Slaying, Berserking</td><td>+damage to beasts. Berserking no longer scales with missing health.</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Skyborne</td><td>Elemental Insight, Wind Blessed</td><td>Top pick if Elementals are present. Wind Blessed is haste.</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+</table></div>
+
+<h2>6. Leveling: abilities to train (Wowhead)</h2>
+<div class="wrap"><table>
+  <tr><th>Level</th><th>Spell</th><th>Ranks to train</th></tr>
+  <tr><td>1</td><td>Raptor Strike</td><td>8, 16, 24, 32, 40, 48, 56</td></tr>
+  <tr><td>4</td><td>Serpent Sting</td><td>10, 18, 26, 34, 42, 50, 58</td></tr>
+  <tr><td>6</td><td>Hunter's Mark, Arcane Shot</td><td>22, 40, 58 / 12, 20, 28, 36, 44, 52, 60</td></tr>
+  <tr><td>8</td><td>Concussive Shot</td><td>—</td></tr>
+  <tr><td>10</td><td>Aspect of the Hawk</td><td>18, 28, 38, 48, 58</td></tr>
+  <tr><td>12</td><td>Wing Clip, Mend Pet</td><td>38, 60 / 20, 28, 36, 44, 52, 60</td></tr>
+  <tr><td>16</td><td>Immolation Trap, Mongoose Bite</td><td>26, 36, 46, 56 / 30, 44, 58</td></tr>
+  <tr><td>18</td><td>Multi-Shot</td><td>—</td></tr>
+  <tr><td>20</td><td>Aspect of the Cheetah, Aimed Shot, Freezing Trap</td><td>28, 36, 44, 52, 60 / 40, 60</td></tr>
+  <tr><td>26</td><td>Rapid Fire</td><td>—</td></tr>
+  <tr><td>28</td><td>Frost Trap</td><td>—</td></tr>
+  <tr><td>30</td><td>Feign Death, Trueshot Aura</td><td>Trueshot: 32, 40, 50, 60</td></tr>
+  <tr><td>34</td><td>Explosive Trap</td><td>44, 54</td></tr>
+  <tr><td>40</td><td>Volley</td><td>50, 58</td></tr>
+</table></div>
+<p class="meta"><span class="tag ok">Confirmed</span> by Wowhead's leveling guide (November 4, 2026). Mandatory spells only; the optional ones are Track Beasts, Aspect of the Monkey, Track Humanoids, Eagle Eye and Flare.</p>
+
+<h2>7. Rotation and cooldowns (Wowhead)</h2>
+<div class="card">
+  <h3>Single target (priority order)</h3>
+  <ol>
+    <li>Keep Hunter's Mark on the target.</li>
+    <li>Keep Serpent Sting up.</li>
+    <li>Use Summon Hawk (keep 2 hawks rolling).</li>
+    <li>Cast Arcane Shot every third rotation, in place of Summon Hawk.</li>
+    <li>Use Aimed Shot.</li>
+  </ol>
+  <h3>AoE</h3>
+  <p>Wowhead says the AoE rotation is the same priority list with Multi-Shot added. Until level 40, use a more basic AoE rotation. <span class="tag nc">Not confirmed</span> the exact AoE order, because the page's AoE tab was not readable.</p>
+  <h3>Cooldowns</h3>
+  <ul>
+    <li><strong>DPS cooldowns:</strong> Rapid Fire and Bestial Wrath. Use them whenever they are up, ideally with an on-use trinket or racial.</li>
+    <li><strong>Utility:</strong> Tranquilizing Shot for enrage, Freezing Trap and Frost Trap for adds, Viper Sting for mana drain, and Intimidation whenever there is a target to stun.</li>
+  </ul>
+  <p class="meta"><span class="tag ok">Confirmed</span> by Wowhead (October 30, 2026).</p>
+</div>
+
+<h2>8. Professions for leveling and endgame (Wowhead)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Leveling:</strong> Skinning and Leatherworking. Skin every beast you kill, then use the leather to craft Leatherworking gear. New Bind-on-Pickup Leatherworking pieces are strong for their levels. <span class="tag ok">Confirmed</span></li>
+    <li><strong>Endgame:</strong> Engineering gives strong guns, headwear, grenades and mines. Wowhead says it basically needs Mining. Replace Skinning with Engineering once you can afford the materials. <span class="tag ok">Confirmed</span></li>
+    <li>Alchemy and Enchanting: <span class="tag nc">Not confirmed</span> how strong they are.</li>
+  </ul>
+</div>
+
+<h2>9. Camping and consumables for leveling (Wowhead)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Camp buffs that always help a BM Hunter:</strong> Fish Bowl, Enchanted Lute, Camp Chair, Mana Well. Camp Tent is a nice addition and speeds leveling slightly.</li>
+    <li><strong>Food:</strong> any food that adds experience from kills (5%) is worth it. Choose food that adds Attack Power or Agility, and food your pet can eat.</li>
+    <li><strong>Bandages:</strong> learn First Aid with the cloth you find. Bandage tiers run from Linen to Runecloth.</li>
+  </ul>
+</div>
+
+<h2>10. Legacy Points (Wowhead)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Bountiful Harvest:</strong> more rare materials from Skinning, for extra gold.</li>
+    <li><strong>Thrill of Adventure and Talented:</strong> more longevity and strength in the field, which makes leveling faster.</li>
+    <li><strong>Gourmand:</strong> longer food buff, which keeps the 5% experience boost up longer.</li>
+  </ul>
+</div>
+
+<h2>What I could not confirm</h2>
+<div class="card">
+  <ul>
+    <li>Talent point ranks for levels 20 to 24 and 40 to 60: Wowhead's builds are calculator images, and the earlier sources disagree.</li>
+    <li>The AoE rotation order: the AoE tab was not readable in the browser.</li>
+    <li>Pet tier rankings: Wowhead does not publish one, and the other sites disagree.</li>
+    <li>Ruthless crit: Wowhead's overview says 1%, a reader comment says 2%.</li>
+    <li>Plainsrunning maximum: Wowhead's Hunter page gives no number; the Warrior page says 60%.</li>
+  </ul>
+</div>
+
+<h2>Sources</h2>
+<div class="card">
+  <ul>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/overview-pve-dps" target="_blank" rel="noopener">Wowhead Forever: Beast Mastery Hunter DPS overview</a> (updated November 14, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/dps-leveling-tips" target="_blank" rel="noopener">Wowhead Forever: Beast Mastery Hunter leveling</a> (updated November 4, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/rotation-cooldowns-pve-dps" target="_blank" rel="noopener">Wowhead Forever: Beast Mastery Hunter rotation and cooldowns</a> (updated October 30, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/talent-builds-pve-dps" target="_blank" rel="noopener">Wowhead Forever: Best Beast Mastery Hunter talent builds</a> (updated November 16, 2026)</li>
+    <li><a href="https://mobalytics.gg/wow-forever/classes/1-60-beast-mastery-hunter-leveling-guide" target="_blank" rel="noopener">Mobalytics: Beast Mastery Hunter 1-60</a> (earlier research, talent points)</li>
+    <li><a href="https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-beast-mastery-hunter-guide-best-builds-race-professions/" target="_blank" rel="noopener">Leprestore: Beast Mastery Hunter guide</a> (earlier research, talent points)</li>
+    <li><a href="https://www.method.gg/wow-forever/wow-forever-hunter-leveling-guide-and-talents" target="_blank" rel="noopener">Method: WoW Forever Hunter leveling</a> (earlier research)</li>
+  </ul>
+</div>
+</main>
+<footer>
+  This guide summarizes community and beta-era sources. It is not an official Blizzard guide. Check every <span class="tag div">Sources differ</span> and <span class="tag nc">Not confirmed</span> item in game.
+</footer>
+<script>
+(function(){
+  var box=document.getElementById("menuIn");
+  var heads=document.querySelectorAll("main h2");
+  heads.forEach(function(h,i){
+    h.id="sec-"+i;
+    var a=document.createElement("a");
+    a.href="#sec-"+i;
+    a.textContent=h.textContent.replace(/^\d+\.\s*/,"");
+    box.appendChild(a);
+  });
+  var links=box.querySelectorAll("a");
+  function mark(){
+    var y=window.scrollY+80,cur=0;
+    heads.forEach(function(h,i){if(h.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur);});
+  }
+  window.addEventListener("scroll",mark,{passive:true});
+  mark();
+})();
+</script>
+</body>
+</html>
